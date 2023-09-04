@@ -1,4 +1,4 @@
-export default function TemplateLayout({
+export default function SettingsLayout({
 	children,
 }: {
 	children: React.ReactNode;

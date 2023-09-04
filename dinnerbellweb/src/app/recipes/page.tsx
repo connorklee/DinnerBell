@@ -1,9 +1,9 @@
 import { title } from "@/components/primitives";
 
-export default function TemplatePage() {
+export default function RecipesPage() {
 	return (
 		<div>
-			<h1 className={title()}>Template</h1>
+			<h1 className={title()}>Recipes</h1>
 		</div>
 	);
 }

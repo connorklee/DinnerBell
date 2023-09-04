@@ -6,6 +6,9 @@ import { SwitchProps, useSwitch } from "@nextui-org/switch";
 import { useTheme } from "next-themes";
 import { useIsSSR } from "@react-aria/ssr";
 import clsx from "clsx";
+import {
+	TbSun, TbMoon
+} from "react-icons/tb"
 
 import { SunFilledIcon, MoonFilledIcon } from "@/components/icons";
 
@@ -62,7 +65,6 @@ export const ThemeSwitch: FC<ThemeSwitchProps> = ({
 							"flex items-center justify-center",
 							"group-data-[selected=true]:bg-transparent",
 							"!text-default-500",
-							"pt-px",
 							"px-0",
 							"mx-0",
 						],
@@ -70,7 +72,7 @@ export const ThemeSwitch: FC<ThemeSwitchProps> = ({
 					),
 				})}
 			>
-				{!isSelected || isSSR ? <MoonFilledIcon size={22} /> : <SunFilledIcon size={22} />}
+				{!isSelected || isSSR ? <TbMoon size={22} /> : <TbSun size={22} />}
 			</div>
 		</Component>
 	);

@@ -1,4 +1,4 @@
-export default function BlogLayout({
+export default function TimersLayout({
 	children,
 }: {
 	children: React.ReactNode;

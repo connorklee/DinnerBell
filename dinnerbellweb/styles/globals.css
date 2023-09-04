@@ -2,37 +2,58 @@
 @tailwind components;
 @tailwind utilities;
 
+:root,
+[data-theme="light"] {
+    --background-color: #5cdb95;
+    --foreground: black;
+    --font-color: #264a6e;
+}
+
+[data-theme='dark'] {
+    --background-color: #379683;
+    --foreground: white;
+    --font-color: #fbfcf6;
+}
+
+body {
+    background: var(--background-color);
+    color: var(--font-color);
+}
+
+.container-header {
+    background: #95b6ba;
+}
+
+.alert {
+    border-color: black;
+}
+
+.alert:hover {
+    opacity: .5;
+}
+
 .container-navbar {
-    padding: 6px;
-    width: 15em;
-    background: white;
+    padding: 10px;
+    width: 17em;
+    background: #fbfcf6;
     transition: all .3s ease-in-out;
     height: 100vh;
-    flex-direction: column;
 }
+
 
 .navbar--closed {
     width: 5em;
 }
 
-.menu-button {
-    position: absolute;
-    justify-content: flex-end;
-    border-radius: sm;
+.menu-title {
+    color: #1d3853;
 }
 
-.menu-button:hover {
-    background-color: bg-gray-900;
-    color: white;
+.menu-item {
+    color: #1d3853;
 }
 
-/* .menu-button:focus {
-    outline: none;
-    border-radius: 2;
-    align-items: center;
-    justify-content: flex-end;
-
-} */
-/* p-6 w-1/2 h-screen bg-white z-20 fixed top-0 -left-96 lg:w-60 lg:left-0 peer-focus:left-0 peer:transition ease-out delay-150 duration-200 */
-
-/* absolute top-4 right-4 inline-flex items-center peer justify-center rounded-md p-2 text-gray-900 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:rind-white group hover:bg-gray-900 */
+.menu-item:hover {
+    background-color: #05386B;
+    color: #FFFFFF;
+}
