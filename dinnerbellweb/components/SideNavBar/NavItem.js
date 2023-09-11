@@ -8,7 +8,7 @@ import { Link } from '@nextui-org/link';
 
 const NavItem = ({ text, children, isMenuCollapsed, onPress, border, nav }) => {
     return (
-        <Link onPress={onPress} href={nav && `/${nav}`} className={`${border && 'border border-gray-200'}, flex mb-2 justify-start items-center gap-4 p-2 rounded-md group cursor-pointer hover:shadow-lg m-auto menu-item`}>
+        <Link shallow onPress={onPress} href={nav && `/${nav}`} className={`${border && 'border border-gray-200'}, flex mb-2 justify-start items-center gap-4 p-2 rounded-md group cursor-pointer hover:shadow-lg m-auto menu-item`}>
             <div className={`p-2 text-2xl `}>
                 {children}
             </div>

@@ -1,26 +1,24 @@
 import "@/styles/globals.css";
 import { Metadata } from "next";
-import { siteConfig } from "@/config/site";
 import { fontSans } from "@/config/fonts";
 import { Providers } from "./providers";
 import clsx from "clsx";
 import SideNavBar from "../../components/SideNavBar/SideNavBar";
 import Header from "../../components/Header/Header";
+import { ReduxProvider } from "../redux/provider";
 
 export const metadata: Metadata = {
 	title: {
-		default: siteConfig.name,
-		template: `%s - ${siteConfig.name}`,
+		default: "DinnerBell",
+		template: `%s - DinnerBell`,
 	},
-	description: siteConfig.description,
+	description: 'DinnerBell made by Connor Lee',
 	themeColor: [
 		{ media: "(prefers-color-scheme: light)", color: "white" },
 		{ media: "(prefers-color-scheme: dark)", color: "black" },
 	],
 	icons: {
-		icon: "/favicon.ico",
-		shortcut: "/favicon-16x16.png",
-		apple: "/apple-touch-icon.png",
+		icon: "/alertbell.png",
 	},
 };
 
@@ -39,16 +37,18 @@ export default function RootLayout({
 				)}
 			>
 				<Providers themeProps={{ attribute: "class", defaultTheme: "dark", }}>
-					<div className="relative flex h-screen">
-						<SideNavBar />
-						<div className="w-full flex-col">
-							<Header />
-							<main className="container mx-auto max-w-7xl pt-16 flex-grow">
+					<ReduxProvider>
+						<div className="relative flex h-screen">
+							<SideNavBar />
+							<div className="w-full flex-col">
+								<Header />
+								<main className="container mx-auto max-w-7xl pt-16 flex-grow">
 
-								{children}
-							</main>
+									{children}
+								</main>
+							</div>
 						</div>
-					</div>
+					</ReduxProvider>
 				</Providers>
 			</body>
 		</html >

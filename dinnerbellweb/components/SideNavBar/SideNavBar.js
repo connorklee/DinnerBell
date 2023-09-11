@@ -5,10 +5,15 @@ import { RxHamburgerMenu } from "react-icons/rx"
 import { Disclosure } from '@headlessui/react'
 import ItemList from "./ItemList"
 import Logo from "./Logo"
-
+import { toggleMenu } from '@/src/redux/features/sideNavBarSlice';
+import { useDispatch } from 'react-redux';
+import { useAppSelector } from '@/src/redux/store';
 
 const SideNavBar = () => {
-    const [isMenuCollapsed, setIsMenuCollapsed] = useState(false)
+    const dispatch = useDispatch();
+    const isMenuCollapsed = useAppSelector((state) => state.sideNavBarReducer.value.isCollasped);
+    console.log(isMenuCollapsed)
+
     const [classContainer, setClassContainer] = useState('')
 
     useEffect(() => {
@@ -16,14 +21,13 @@ const SideNavBar = () => {
         setClassContainer(c)
     }, [isMenuCollapsed])
 
-    const toggleMenu = () => {
-        const switchMenu = !isMenuCollapsed
-        setIsMenuCollapsed(switchMenu)
+    const onClickToggle = () => {
+        dispatch(toggleMenu())
     }
 
     const RenderMenuButton = () => {
         return (
-            <Disclosure.Button className="float-right justify-end peer rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-inset focus:rind-white group menu-item" onClick={() => toggleMenu()}>
+            <Disclosure.Button onClick={() => onClickToggle()} className="float-right justify-end peer rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-inset focus:rind-white group menu-item">
                 <RxHamburgerMenu className="block h-6 w-6" aria-hidden="true" />
             </Disclosure.Button>
         )
