@@ -12,7 +12,6 @@ import { useAppSelector } from '@/src/redux/store';
 const SideNavBar = () => {
     const dispatch = useDispatch();
     const isMenuCollapsed = useAppSelector((state) => state.sideNavBarReducer.value.isCollasped);
-    console.log(isMenuCollapsed)
 
     const [classContainer, setClassContainer] = useState('')
 
