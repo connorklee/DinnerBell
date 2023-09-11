@@ -57,3 +57,18 @@ body {
     background-color: #05386B;
     color: #FFFFFF;
 }
+
+.add-timer-button {
+    background: linear-gradient(to bottom, #3498db, #2980b9);
+    color: white;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: 3em;
+    height: 3.5em;
+    width: 3.5em;
+}
+
+.add-timer-button:hover {
+    background: linear-gradient(to bottom, #2980b9, #3498db);
+}

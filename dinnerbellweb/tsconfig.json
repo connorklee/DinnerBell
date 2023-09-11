@@ -35,7 +35,8 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "src/app/layout.js",
-    "src/app/timers/layout.js"
+    "src/app/timers/layout.js",
+    "src/app/timers/page.js"
   ],
   "exclude": [
     "node_modules"
