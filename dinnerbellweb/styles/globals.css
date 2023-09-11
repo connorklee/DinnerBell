@@ -63,6 +63,16 @@ body {
     color: #FFFFFF;
 }
 
+.header-title {
+    color: #1d3853;
+}
+
+.header-container {
+    position: absolute;
+    right: 0;
+    padding-right: 2em;
+}
+
 .add-timer-button {
     background: linear-gradient(to bottom, #3498db, #2980b9);
     color: white;
