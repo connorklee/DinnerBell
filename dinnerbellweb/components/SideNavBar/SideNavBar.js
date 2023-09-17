@@ -10,8 +10,13 @@ import { useDispatch } from 'react-redux';
 import { useAppSelector } from '@/src/redux/store';
 
 const SideNavBar = () => {
+    const [hydrated, setHydrated] = useState(false);
+    useEffect(() => {
+        setHydrated(true);
+    }, []);
+
     const dispatch = useDispatch();
-    const isMenuCollapsed = useAppSelector((state) => state.sideNavBarReducer.value.isCollasped);
+    const isMenuCollapsed = useAppSelector((state) => state.persistedReducer.sideBar.value.isCollasped);
 
     const [classContainer, setClassContainer] = useState('')
 
@@ -36,18 +41,21 @@ const SideNavBar = () => {
         <div>
             <Disclosure as="nav">
                 <div className={`container-navbar ${classContainer} border-r-2`}>
-                    <div className="flex flex-col justify-start items-center">
-                        {!isMenuCollapsed
-                            ? (<div className={'flex-row w-full justify-evenly'}>
-                                <RenderMenuButton />
-                                <Logo />
-                            </div>)
-                            : (
-                                <RenderMenuButton />
-                            )}
+                    {!hydrated
+                        ? (<div>Loading...</div>)
+                        : (<div className="flex flex-col justify-start items-center">
+                            {!isMenuCollapsed
+                                ? (<div className={'flex-row w-full justify-evenly'}>
+                                    <RenderMenuButton />
+                                    <Logo />
+                                </div>)
+                                : (
+                                    <RenderMenuButton />
+                                )}
 
-                        <ItemList isMenuCollapsed={isMenuCollapsed} />
-                    </div>
+                            <ItemList isMenuCollapsed={isMenuCollapsed} />
+                        </div>)
+                    }
                 </div>
             </Disclosure >
         </div>

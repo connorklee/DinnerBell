@@ -3,6 +3,7 @@
 import AddTimerButton from "./components/AddTimerButton"
 import React, { useState } from "react";
 import Timer from "./components/Timer"
+import TimerFrame from "./components/TimerFrame"
 
 export default function TimersPage() {
 
@@ -11,7 +12,7 @@ export default function TimersPage() {
 	return (
 		<div>
 			{isActiveTimers
-				? (<Timer />)
+				? (<TimerFrame />)
 				: (<div>
 					No active timers
 					<br />

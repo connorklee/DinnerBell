@@ -22,7 +22,6 @@ const ItemList = ({ isMenuCollapsed }) => {
             <div className="my-4 border-b border-gray-100 pb-4 w-full">
                 <NavItem nav={timers} active={activePage(timers)} text={'Timers'} isMenuCollapsed={isMenuCollapsed}>
                     <MdOutlineTimer />
-
                 </NavItem>
 
                 <NavItem nav={recipes} active={activePage(recipes)} text={'Recipes'} isMenuCollapsed={isMenuCollapsed}>
@@ -31,12 +30,12 @@ const ItemList = ({ isMenuCollapsed }) => {
             </div>
 
             {/* settings */}
-            <div className=" my-4 border-b border-gray-100 pb-4 w-full">
+            <div className=" border-b border-gray-100 pb-4 w-full">
                 <NavItem nav={settings} active={activePage(settings)} text={'Settings'} isMenuCollapsed={isMenuCollapsed}>
                     <MdOutlineSettings />
                 </NavItem>
 
-                <ChangeTheme isMenuCollapsed={isMenuCollapsed} />
+                {/* <ChangeTheme isMenuCollapsed={isMenuCollapsed} /> */}
             </div>
 
             {/* login/logout */}

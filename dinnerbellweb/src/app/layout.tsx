@@ -13,10 +13,6 @@ export const metadata: Metadata = {
 		template: `%s - DinnerBell`,
 	},
 	description: 'DinnerBell made by Connor Lee',
-	themeColor: [
-		{ media: "(prefers-color-scheme: light)", color: "white" },
-		{ media: "(prefers-color-scheme: dark)", color: "black" },
-	],
 	icons: {
 		icon: "/alertbell.png",
 	},
@@ -38,12 +34,11 @@ export default function RootLayout({
 			>
 				<Providers themeProps={{ attribute: "class", defaultTheme: "dark", }}>
 					<ReduxProvider>
-						<div className="relative flex h-screen">
+						<div className="relative flex h-screen overflow-hidden" >
 							<SideNavBar />
 							<div className="w-full flex-col">
 								<Header />
 								<main className="container mx-auto max-w-7xl pt-16 flex-grow">
-
 									{children}
 								</main>
 							</div>

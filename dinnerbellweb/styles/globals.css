@@ -4,20 +4,32 @@
 
 :root,
 [data-theme="light"] {
-    --background-color: #5cdb95;
-    --foreground: black;
+    --bg: #5cdb95;
+    --fg: black;
     --font-color: #264a6e;
 }
 
 [data-theme='dark'] {
-    --background-color: #379683;
-    --foreground: white;
+    --bg: #379683;
+    --fg: white;
     --font-color: #fbfcf6;
 }
 
+html,
 body {
-    background: var(--background-color);
+    padding: 0;
+    margin: 0;
+    /* background: var(--background-color);
+    color: var(--font-color); */
+}
+
+body {
+    min-height: 100vh;
+    /* font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
+      Fira Sans, Droid Sans, Helvetica Neue, sans-serif; */
     color: var(--font-color);
+    background: var(--bg);
+    color: var(--fg);
 }
 
 .container-header {
@@ -26,6 +38,7 @@ body {
 
 .alert {
     border-color: black;
+    margin: 0 auto;
 }
 
 .alert:hover {
@@ -86,4 +99,18 @@ body {
 
 .add-timer-button:hover {
     background: linear-gradient(to bottom, #2980b9, #3498db);
+}
+
+.timer-frame {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 20px;
+}
+
+.timer-container {
+    height: 100%;
+    width: 100%;
+    border: white;
+    border-width: 1;
+    background-color: white;
 }

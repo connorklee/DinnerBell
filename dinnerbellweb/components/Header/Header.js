@@ -7,7 +7,7 @@ import { Link } from '@nextui-org/link';
 
 const Header = () => {
     return (
-        <div className='container-header flex justify-center items-center w-full h-18 p-2 border-b-2'>
+        <div className='container-header flex justify-center items-center w-full h-20 p-2 border-b-2'>
             <Tooltip color="primary" showArrow={true} plaement='right' closeDelay={0} content="Ready to ring the dinner bell?">
                 <div className='alert cursor-pointer block border-2 p-2 rounded-3xl w-14 m-0'>
                     <div style={{ width: '2em', height: '2em' }} className='mx-auto'>

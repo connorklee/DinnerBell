@@ -10,8 +10,12 @@ module.exports = {
   ],
   theme: {
     colors: {
-      'light-background': '#8ee4af',
-      'dark-background': '#379683'
+      'light-green': '#5cdb95',
+      'dark-green': '#379683',
+      'white': '#ffffff',
+      'text-blue': '#264a6e',
+      'text-seashell': '#fbfcf6'
+
     },
     extend: {},
   },
